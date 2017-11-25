@@ -22,10 +22,10 @@ interface UserEditContract {
         fun showUserInfo(userInfo: IModel.IUserModel)
 
         /**
-         * 显示编辑成功
+         * 显示编辑头像成功
          * @param imageUrl 上传的头像地址
          */
-        fun showEditSuccess(imageUrl:String)
+        fun showEditPictureSuccess(imageUrl:String)
 
         /**
          * 显示编辑失败
@@ -42,7 +42,7 @@ interface UserEditContract {
         /**
          * 编辑个人信息
          * 异步提交调用 [IUserEditDataSource.submitUserInfo]
-         * 在主线程调用 [IUserEditView.showEditSuccess]、[IUserEditView.showEditFailed]
+         * 在主线程调用 [IUserEditView.showEditPictureSuccess]、[IUserEditView.showEditFailed]
          * @param userInfo 个人资料
          */
         fun editUserInfo(userInfo: IModel.IUserModel)
@@ -50,7 +50,7 @@ interface UserEditContract {
         /**
          * 修改头像
          * 异步提交调用 [IUserEditDataSource.submitUserPicture]
-         * 在主线程调用 [IUserEditView.showEditSuccess]、[IUserEditView.showEditFailed]
+         * 在主线程调用 [IUserEditView.showEditPictureSuccess]、[IUserEditView.showEditFailed]
          * @param picture 头像图片
          */
         fun editPicture(picture:Bitmap)
