@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ContractLibrary.iml" filepath="$PROJECT_DIR$/ContractLibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/contractlib/contractlib.iml" filepath="$PROJECT_DIR$/contractlib/contractlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/integratedlib/integratedlib.iml" filepath="$PROJECT_DIR$/integratedlib/integratedlib.iml" />
     </modules>
   </component>
 </project>
