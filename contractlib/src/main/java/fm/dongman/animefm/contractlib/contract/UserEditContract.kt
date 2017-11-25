@@ -23,8 +23,9 @@ interface UserEditContract {
 
         /**
          * 显示编辑成功
+         * @param imageUrl 上传的头像地址
          */
-        fun showEditSuccess()
+        fun showEditSuccess(imageUrl:String)
 
         /**
          * 显示编辑失败
