@@ -1,4 +1,4 @@
-package fm.dongman.contractlib.contract
+package fm.dongman.animefm.contractlib.contract
 
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.BasePresenter
@@ -52,7 +52,7 @@ interface ComicTimeContract {
     /**
      * 时间表数据源接口
      */
-    interface IComicTimeDataSource : BaseDataSource<List<Map<String, String>>> {
+    interface IComicTimeDataSource : BaseDataSource<List<Map<String,String>>> {
         /**
          * 获取平日新番
          * @param weekday 平日

@@ -1,10 +1,10 @@
-package fm.dongman.contractlib.contract
+package fm.dongman.animefm.contractlib.contract
 
 import fm.dongman.animefm.contractlib.BasePresenter
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.BaseView
 import fm.dongman.animefm.contractlib.IModel
-import fm.dongman.contractlib.model.FArticleDataModel
+import fm.dongman.animefm.contractlib.model.FArticleDataModel
 
 /**
  * 发现->漫圈的契约接口

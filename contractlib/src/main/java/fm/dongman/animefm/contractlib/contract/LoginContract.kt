@@ -1,4 +1,4 @@
-package fm.dongman.contractlib.contract
+package fm.dongman.animefm.contractlib.contract
 
 import android.app.Activity
 import fm.dongman.animefm.contractlib.BaseDataSource
@@ -49,7 +49,8 @@ interface LoginContract {
 
         companion object {
             val LOGIN_QQ = 1 // 腾讯 qq
-            val LOGIN_SINA = 2 // 新浪微博
+            val LOGIN_WX = 2 // 微信
+            val LOGIN_SINA = 3 // 新浪微博
         }
     }
 

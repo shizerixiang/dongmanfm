@@ -1,4 +1,4 @@
-package fm.dongman.contractlib.contract
+package fm.dongman.animefm.contractlib.contract
 
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.BasePresenter
@@ -30,7 +30,7 @@ interface SheetCreateContract {
     /**
      * 漫单创建数据操作接口
      */
-    interface ISheetCreatePresenter: BasePresenter {
+    interface ISheetCreatePresenter:BasePresenter{
         /**
          * 创建漫单
          * 通过异步调用 [ISheetCreateDataSource.createSheet] 获取数据
@@ -43,7 +43,7 @@ interface SheetCreateContract {
     /**
      * 漫单数据源接口
      */
-    interface ISheetCreateDataSource: BaseDataSource<Void> {
+    interface ISheetCreateDataSource:BaseDataSource<Void>{
         /**
          * 创建漫单
          * @param userId 用户 id

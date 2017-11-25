@@ -1,11 +1,11 @@
-package fm.dongman.contractlib.contract
+package fm.dongman.animefm.contractlib.contract
 
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.BasePresenter
 import fm.dongman.animefm.contractlib.BaseView
 import fm.dongman.animefm.contractlib.IModel
-import fm.dongman.contractlib.model.ComicInfoDataModel
-import fm.dongman.contractlib.model.ScoreModel
+import fm.dongman.animefm.contractlib.model.ComicInfoDataModel
+import fm.dongman.animefm.contractlib.model.ScoreModel
 
 /**
  * 动漫详情契约接口
@@ -40,6 +40,12 @@ interface ComicInfoContract {
          * @param sheets 漫单集合
          */
         fun showRelatedSheets(sheets: List<IModel.ISheetModel>)
+
+        /**
+         * 显示相关评论
+         * @param comments 评论集合
+         */
+        fun showRelatedComments(comments:List<IModel.ICommentModel>)
 
         /**
          * 显示加入漫单成功

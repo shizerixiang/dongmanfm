@@ -1,4 +1,4 @@
-package fm.dongman.contractlib.contract
+package fm.dongman.animefm.contractlib.contract
 
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.BasePresenter
@@ -30,7 +30,7 @@ interface CommentEditContract {
     /**
      * 编辑评论数据操作接口
      */
-    interface ICommentEditPresenter: BasePresenter {
+    interface ICommentEditPresenter:BasePresenter{
         /**
          * 提交评论
          * 通过异步调用 [ICommentEditDataSource.submitComment] 获取数据
@@ -43,7 +43,7 @@ interface CommentEditContract {
     /**
      * 编辑评论数据源接口
      */
-    interface ICommentEditDataSource: BaseDataSource<Void> {
+    interface ICommentEditDataSource:BaseDataSource<Void>{
         /**
          * 提交评论
          * @param comment 评论

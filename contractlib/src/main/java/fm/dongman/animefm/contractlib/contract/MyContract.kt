@@ -1,4 +1,4 @@
-package fm.dongman.contractlib.contract
+package fm.dongman.animefm.contractlib.contract
 
 import fm.dongman.animefm.contractlib.BasePresenter
 import fm.dongman.animefm.contractlib.BaseDataSource

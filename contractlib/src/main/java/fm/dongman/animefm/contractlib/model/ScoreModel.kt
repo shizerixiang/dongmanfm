@@ -1,4 +1,4 @@
-package fm.dongman.contractlib.model
+package fm.dongman.animefm.contractlib.model
 
 /**
  * 评分模型

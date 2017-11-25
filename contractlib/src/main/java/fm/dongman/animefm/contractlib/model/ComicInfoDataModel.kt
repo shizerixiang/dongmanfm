@@ -1,7 +1,6 @@
-package fm.dongman.contractlib.model
+package fm.dongman.animefm.contractlib.model
 
 import fm.dongman.animefm.contractlib.IModel
-import java.util.*
 
 /**
  * 动漫详情页面数据模型
@@ -12,4 +11,5 @@ class ComicInfoDataModel {
     var relatedComics: List<IModel.IComicModel> = ArrayList() // 相关番剧
     var relatedArticles: List<IModel.IArticleModel> = ArrayList() // 相关漫帖
     var relatedSheets: List<IModel.ISheetModel> = ArrayList() // 相关漫单
+    var relatedComment:List<IModel.ICommentModel> = ArrayList() // 相关评论
 }

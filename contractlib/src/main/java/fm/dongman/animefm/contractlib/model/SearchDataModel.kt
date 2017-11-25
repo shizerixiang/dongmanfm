@@ -1,6 +1,4 @@
-package fm.dongman.contractlib.model
-
-import java.util.*
+package fm.dongman.animefm.contractlib.model
 
 /**
  * 搜索数据模型

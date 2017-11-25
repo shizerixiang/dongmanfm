@@ -1,9 +1,9 @@
-package fm.dongman.contractlib.contract
+package fm.dongman.animefm.contractlib.contract
 
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.BasePresenter
 import fm.dongman.animefm.contractlib.BaseView
-import fm.dongman.contractlib.model.HomeDataModel
+import fm.dongman.animefm.contractlib.model.HomeDataModel
 import fm.dongman.animefm.contractlib.IModel.*
 
 /**

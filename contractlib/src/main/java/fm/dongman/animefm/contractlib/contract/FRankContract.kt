@@ -1,10 +1,10 @@
-package fm.dongman.contractlib.contract
+package fm.dongman.animefm.contractlib.contract
 
 import fm.dongman.animefm.contractlib.BasePresenter
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.BaseView
 import fm.dongman.animefm.contractlib.IModel
-import fm.dongman.contractlib.model.FRankDataModel
+import fm.dongman.animefm.contractlib.model.FRankDataModel
 
 /**
  * 发现->漫榜的契约接口
@@ -49,7 +49,7 @@ interface FRankContract {
     /**
      * 漫榜操作接口
      */
-    interface IFRankPresenter : BasePresenter {
+    interface IFRankPresenter : BasePresenter{
         /**
          * 获取更多排行
          */
@@ -59,7 +59,7 @@ interface FRankContract {
     /**
      * 漫榜数据接口
      */
-    interface IFRankDataSource : BaseDataSource<FRankDataModel> {
+    interface IFRankDataSource : BaseDataSource<FRankDataModel>{
         /**
          * 获取更多排行
          * @return 返回地址（本地常量）
