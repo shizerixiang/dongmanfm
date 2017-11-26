@@ -17,10 +17,9 @@ interface SettingContract {
         /**
          * 显示可更新版本号
          * 由 [ISettingPresenter.startLoad] 回调
-         * @param oldVersion 现版本号
-         * @param newVersion 最新版本号
+         * @param url 最新软件包地址
          */
-        fun showVersion(oldVersion: String, newVersion: String)
+        fun showVersion(url: String)
 
         /**
          * 显示已经是最新版本
