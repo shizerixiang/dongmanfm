@@ -113,8 +113,9 @@ interface SheetInfoContract {
         /**
          * 删除漫单中的动漫
          * @param sheetId 漫单 id
+         * @param comics 动漫集合
          * @param callback 回调
          */
-        fun deleteComics(sheetId: String, callback: BaseDataSource.LoadSourceCallback<String?>)
+        fun deleteComics(sheetId: String, comics: List<IModel.IComicModel>, callback: BaseDataSource.LoadSourceCallback<String?>)
     }
 }
