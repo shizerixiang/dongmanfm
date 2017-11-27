@@ -46,20 +46,20 @@ interface SheetCreateContract {
      */
     interface ISheetCreatePresenter:BasePresenter{
         /**
-         * 设置编辑漫单的 id
-         * 通过 设置漫单id [ISheetCreateDataSource.setEditSheetId] 再异步调用 [ISheetCreateDataSource.getData] 获取要编辑的漫单数据
-         * 并在 UI 线程中调用 [ISheetCreateView.showEditSheetInfo] 显示漫单数据
-         * @param sheetId 编辑漫单的 id
-         */
-        fun setEditSheetId(sheetId:String)
-
-        /**
          * 创建漫单
          * 通过异步调用 [ISheetCreateDataSource.createSheet] 获取数据
          * 并在 UI 线程中调用 [ISheetCreateView.showCreateSucceed] 或 [ISheetCreateView.showCreateFailed] 显示数据
          * @param sheet 漫单
          */
         fun createSheet(sheet: IModel.ISheetModel)
+
+        /**
+         * 设置编辑漫单的 id
+         * 通过 设置漫单id [ISheetCreateDataSource.setEditSheetId] 再异步调用 [ISheetCreateDataSource.getData] 获取要编辑的漫单数据
+         * 并在 UI 线程中调用 [ISheetCreateView.showEditSheetInfo] 显示漫单数据
+         * @param sheetId 编辑漫单的 id
+         */
+        fun setEditSheetId(sheetId:String)
 
         /**
          * 编辑漫单
@@ -75,18 +75,18 @@ interface SheetCreateContract {
      */
     interface ISheetCreateDataSource:BaseDataSource<IModel.IUserModel>{
         /**
-         * 设置编辑漫单的 id
-         * @param sheetId 漫单 id
-         */
-        fun setEditSheetId(sheetId: String)
-
-        /**
          * 创建漫单
          * @param userId 用户 id
          * @param sheet 漫单
          * @param callback 获取信息回调接口
          */
         fun createSheet(userId: String, sheet: IModel.ISheetModel, callback: BaseDataSource.LoadSourceCallback<String?>)
+
+        /**
+         * 设置编辑漫单的 id
+         * @param sheetId 漫单 id
+         */
+        fun setEditSheetId(sheetId: String)
 
         /**
          * 提交编辑漫单信息
