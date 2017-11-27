@@ -3,7 +3,6 @@ package fm.dongman.presenterlib.presenter
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.IModel
 import fm.dongman.animefm.contractlib.contract.ArticleListContract
-import fm.dongman.modellib.source.ArticleListRepository
 import fm.dongman.presenterlib.util.NetworkHelper
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -17,7 +16,7 @@ class ArticleListPresenter (private val mIArticleListView: ArticleListContract.I
     : ArticleListContract.IArticleListPresenter {
 
     private var mPage: Int = 0 // 页数
-    private var mType: String = ArticleListRepository.TYPE_COSPLAY // 类型
+    private var mType: String = "cosplay" // 类型
     private var mKey: String? = null // 搜索关键字
 
     init {

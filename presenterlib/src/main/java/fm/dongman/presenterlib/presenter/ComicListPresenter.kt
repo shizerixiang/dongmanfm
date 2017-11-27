@@ -4,7 +4,6 @@ import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.IModel
 import fm.dongman.animefm.contractlib.contract.ComicListContract
 import fm.dongman.animefm.contractlib.contract.MyContract
-import fm.dongman.modellib.model.ComicModel
 import fm.dongman.presenterlib.util.NetworkHelper
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

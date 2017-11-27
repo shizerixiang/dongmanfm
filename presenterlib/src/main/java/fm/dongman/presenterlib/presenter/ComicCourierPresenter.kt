@@ -3,7 +3,6 @@ package fm.dongman.presenterlib.presenter
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.IModel
 import fm.dongman.animefm.contractlib.contract.ComicCourierContract
-import fm.dongman.modellib.source.ComicCourierRepository
 import fm.dongman.presenterlib.util.NetworkHelper
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -17,7 +16,7 @@ class ComicCourierPresenter constructor(private val mIComicCourierView: ComicCou
     : ComicCourierContract.IComicCourierPresenter {
 
     private var mQuarter: String = "" // 季度
-    private var mOrder = ComicCourierRepository.ORDER_HOT // 排序方式，默认最热排序
+    private var mOrder = "hot" // 排序方式，默认最热排序
 
     init {
         mIComicCourierView.setPresenter(this)

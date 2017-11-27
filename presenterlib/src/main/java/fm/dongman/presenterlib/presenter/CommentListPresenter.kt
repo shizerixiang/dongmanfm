@@ -5,7 +5,6 @@ import fm.dongman.animefm.contractlib.IModel
 import fm.dongman.animefm.contractlib.contract.CommentListContract
 import fm.dongman.animefm.contractlib.contract.CommentListContract.ICommentListPresenter.Companion.TYPE_SHORT
 import fm.dongman.animefm.contractlib.contract.MyContract
-import fm.dongman.modellib.source.CommentListRepository
 import fm.dongman.presenterlib.util.NetworkHelper
 import fm.dongman.presenterlib.util.NetworkHelper.isUnLogged
 import org.jetbrains.anko.doAsync
@@ -21,7 +20,7 @@ class CommentListPresenter constructor(private val mICommentListView: CommentLis
 
     private var mPage: Int = 0 // 页数
     private var mType: String? = TYPE_SHORT // 评论类型，默认短评
-    private var mAscriptionType: String = CommentListRepository.SUBJECT // 归属对象类型
+    private var mAscriptionType: String = "subject" // 归属对象类型
     private var mAscriptionId: String? = null // 归属对象 id
 
     init {
