@@ -73,7 +73,7 @@ interface SheetCreateContract {
     /**
      * 漫单数据源接口
      */
-    interface ISheetCreateDataSource:BaseDataSource<IModel.IUserModel>{
+    interface ISheetCreateDataSource:BaseDataSource<IModel.ISheetModel>{
         /**
          * 创建漫单
          * @param userId 用户 id
