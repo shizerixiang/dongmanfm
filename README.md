@@ -1,5 +1,16 @@
 # 更新说明
 
+## v1.1.9：修复了部分操作赋值问题
+### 改动说明：修复了部分操作赋值问题
+
+#### ArticleListPresenter
+
+#### ComicListPresenter
+
+#### CommentListPresenter
+
+#### ComicCourierPresenter
+
 ## v1.1.8：添加数据操作层
 ### 改动说明：添加了数据操作库 PresenterLib
 
