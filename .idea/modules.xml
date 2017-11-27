@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ContractLibrary.iml" filepath="$PROJECT_DIR$/ContractLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/contractlib/contractlib.iml" filepath="$PROJECT_DIR$/contractlib/contractlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/presenterlib/presenterlib.iml" filepath="$PROJECT_DIR$/presenterlib/presenterlib.iml" />
     </modules>
   </component>
 </project>
