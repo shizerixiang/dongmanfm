@@ -39,6 +39,13 @@ interface CommentListContract {
          * 由 [ICommentListPresenter.supportComment] 回调
          */
         fun showSupportFailed()
+
+        /**
+         * 显示删除状态
+         * 由 [ICommentListPresenter.deleteComment] 回调
+         * @param state 是否删除成功
+         */
+        fun showDeleteCommentState(state: Boolean)
     }
 
     /**
@@ -64,10 +71,18 @@ interface CommentListContract {
          */
         fun supportComment(commentId: String)
 
-        companion object{
+        /**
+         * 删除评论
+         * 通过异步调用 [ICommentListDataSource.deleteComment] 获取数据
+         * 并在 UI 线程中调用 [ICommentListView.showDeleteCommentState] 显示结果
+         * @param commentId 评论 id
+         */
+        fun deleteComment(commentId: String)
+
+        companion object {
             // 评论类型
-            val TYPE_SHORT:String = "短评"
-            val TYPE_LONG:String = "长评"
+            val TYPE_SHORT: String = "短评"
+            val TYPE_LONG: String = "长评"
         }
     }
 
@@ -90,6 +105,13 @@ interface CommentListContract {
          * @param userId 用户 id
          * @param callback 支持操作回调
          */
-        fun supportComment(commentId: String, userId: String, callback: BaseDataSource.LoadSourceCallback<Void>)
+        fun supportComment(commentId: String, userId: String, callback: BaseDataSource.LoadSourceCallback<String?>)
+
+        /**
+         * 删除自己的评论
+         * @param commentId 评论 id
+         * @param callback 回调
+         */
+        fun deleteComment(commentId: String, callback: BaseDataSource.LoadSourceCallback<String?>)
     }
 }

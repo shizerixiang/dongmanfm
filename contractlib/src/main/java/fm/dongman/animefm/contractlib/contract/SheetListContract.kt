@@ -31,15 +31,24 @@ interface SheetListContract {
 
         /**
          * 显示搜索的专题列表
+         * 由 [ISheetListPresenter.getSheets] 回调
          * @param topics 搜索的专题
          */
         fun showSearchTopicResult(topics:List<IModel.ISheetModel>)
 
         /**
          * 显示更多搜索的专题
+         * 由 [ISheetListPresenter.getSheets] 回调
          * @param topics 搜索的专题
          */
         fun showMoreSearchTopicResult(topics:List<IModel.ISheetModel>)
+
+        /**
+         * 显示是否成功删除漫单
+         * 由 [ISheetListPresenter.deleteSheet] 回调
+         * @param boolean 是否成功删除
+         */
+        fun showDeleteState(boolean: Boolean)
     }
 
     /**
@@ -48,13 +57,22 @@ interface SheetListContract {
     interface ISheetListPresenter : BasePresenter {
         /**
          * 获取漫单列表
-         * 通过 [ISheetListDataSource.setSheetListInfo] 再异步调用 [ISheetListDataSource.getData] 获取数据
+         * 通过 [ISheetListDataSource.setSheetListInfo] 再异步调用 [ISheetListDataSource.getData] or [ISheetListDataSource.searchSheets] 获取数据
          * 并在 UI 线程中调用 [ISheetListView.showSheets] 或 [ISheetListView.showMoreSheets] 显示结果
+         * 以及 [ISheetListView.showSearchTopicResult] 或 [ISheetListView.showMoreSearchTopicResult] 显示结果
          * @param page 页数（从 1 开始，每页 10 个数据）
          * @param type 漫单列表类型
          * @param id 若是特殊类型则需要 id（如：用户创建的漫单，需要用户 id），不是则为 null
          */
         fun getSheets(page: Int, type: String, id: String?)
+
+        /**
+         * 删除漫单
+         * 通过异步调用 [ISheetListDataSource.deleteSheet] 获取数据
+         * 并在 UI 线程中调用 [ISheetListView.showDeleteState] 显示结果
+         * @param sheetId 漫单 id
+         */
+        fun deleteSheet(sheetId:String)
 
         companion object{
             val TYPE_SEARCH:String = "search" // 搜索
@@ -80,5 +98,12 @@ interface SheetListContract {
          * @param callback 获取数据回调
          */
         fun searchSheets(key:String, callback: BaseDataSource.LoadSourceCallback<SearchSheetResultModel>)
+
+        /**
+         * 删除漫单
+         * @param sheetId 漫单id
+         * @param callback 回调
+         */
+        fun deleteSheet(sheetId: String,callback: BaseDataSource.LoadSourceCallback<String?>)
     }
 }
