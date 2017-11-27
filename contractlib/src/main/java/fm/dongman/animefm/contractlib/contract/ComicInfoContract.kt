@@ -1,5 +1,6 @@
 package fm.dongman.animefm.contractlib.contract
 
+import android.graphics.Bitmap
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.BasePresenter
 import fm.dongman.animefm.contractlib.BaseView
@@ -96,6 +97,20 @@ interface ComicInfoContract {
          * 由 [IComicInfoPresenter.getMySheets] 回调
          */
         fun showGetMySheetsFailed()
+
+        /**
+         * 显示反馈状态
+         * 由 [IComicInfoPresenter.sendFeedback] 回调
+         * @param boolean 是否发送反馈成功
+         */
+        fun showFeedbackState(boolean: Boolean)
+
+        /**
+         * 显示上传剧照状态
+         * 由 [IComicInfoPresenter.updateStills] 回调
+         * @param boolean 是否上传成功
+         */
+        fun showUpdateStillsState(boolean: Boolean)
     }
 
     /**
@@ -140,6 +155,23 @@ interface ComicInfoContract {
          * @param sheetId 漫单 id
          */
         fun joinSheet(sheetId: String)
+
+        /**
+         * 发送反馈
+         * 通过异步调用 [IComicInfoDataSource.sendFeedback] 获取数据
+         * 并在 UI 线程中调用 [IComicInfoView.showFeedbackState] 显示数据
+         * @param comicId 动漫id
+         * @param feedback 反馈信息
+         */
+        fun sendFeedback(comicId: String, feedback:IModel.IFeedBackModel)
+
+        /**
+         * 上传剧照
+         * 通过异步调用 [IComicInfoDataSource.updateStills] 获取数据
+         * 并在 UI 线程中调用 [IComicInfoView.showUpdateStillsState] 显示数据
+         * @param stills 剧照
+         */
+        fun updateStills(stills:Bitmap)
     }
 
     /**
@@ -181,5 +213,20 @@ interface ComicInfoContract {
          * @param callback 获取信息回调接口
          */
         fun joinSheet(sheetId: String, callback: BaseDataSource.LoadSourceCallback<Void>)
+
+        /**
+         * 发送反馈
+         * @param comicId 动漫 id
+         * @param feedback 反馈信息
+         * @param callback 回调
+         */
+        fun sendFeedback(comicId:String, feedback: IModel.IFeedBackModel,callback: BaseDataSource.LoadSourceCallback<String>)
+
+        /**
+         * 上传剧照
+         * @param stills 剧照
+         * @param callback 回调
+         */
+        fun updateStills(stills: Bitmap,callback: BaseDataSource.LoadSourceCallback<String>)
     }
 }
