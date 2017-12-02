@@ -21,7 +21,7 @@ class ChatListPresenter constructor(private val mIChatListView: ChatListContract
     }
 
     override fun startLoad() {
-        if (!NetworkHelper.isUnLogged(mIChatListView.getViewContext())) {
+        if (NetworkHelper.isUnLogged(mIChatListView.getViewContext())) {
             mIChatListView.showNoNetwork()
             return
         }
