@@ -1,6 +1,5 @@
 package fm.dongman.presenterlib.presenter
 
-import android.text.Editable
 import fm.dongman.animefm.contractlib.BaseDataSource
 import fm.dongman.animefm.contractlib.IModel
 import fm.dongman.animefm.contractlib.contract.ChatContract
@@ -16,22 +15,27 @@ import org.jetbrains.anko.uiThread
 class ChatPresenter constructor(private val mIChatView: ChatContract.IChatView,
                                 private val mIChatDataSource: ChatContract.IChatDataSource)
     : ChatContract.IChatPresenter {
+    private var mChatId:String = ""
 
     init {
         mIChatView.setPresenter(this)
     }
 
     override fun startLoad() {
+    }
+
+    override fun refreshPage() {
+        mIChatDataSource.refreshData()
+        loadSource()
+    }
+
+    override fun setChatId(chatId: String) {
+        mChatId = chatId
         if (NetworkHelper.isUnLogged(mIChatView.getViewContext())) {
             mIChatView.showNoNetwork()
             return
         }
         loadSource()
-    }
-
-    override fun refreshPage() {
-        mIChatDataSource.refreshData()
-        startLoad()
     }
 
     override fun sendChat(chat: IModel.IMsgModel) {
@@ -70,7 +74,7 @@ class ChatPresenter constructor(private val mIChatView: ChatContract.IChatView,
      */
     private fun loadSource() {
         doAsync {
-            mIChatDataSource.getData(object : BaseDataSource.LoadSourceCallback<List<IModel.IMsgModel>> {
+            mIChatDataSource.setChatId(mChatId,object : BaseDataSource.LoadSourceCallback<List<IModel.IMsgModel>> {
                 override fun onDataLoaded(dataModel: List<IModel.IMsgModel>) {
                     uiThread {
                         if (mIChatView.isActive())

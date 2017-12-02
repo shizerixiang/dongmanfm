@@ -16,7 +16,7 @@ interface ChatContract {
     interface IChatView : BaseView<IChatPresenter> {
         /**
          * 显示历史聊天记录
-         * 由 [IChatPresenter.startLoad] 回调
+         * 由 [IChatPresenter.setChatId] 回调
          * @param chats 聊天记录
          */
         fun showHistoryChat(chats: List<IModel.IMsgModel>)
@@ -37,9 +37,18 @@ interface ChatContract {
 
     /**
      * 私聊数据操作接口
-     * 在获取历史记录之前，需要先设置我方和对方的 id [IChatDataSource.setUserId]
+     * 在获取历史记录之前，需要先设置我方和对方的 id [IChatDataSource.setChatId]
      */
     interface IChatPresenter : BasePresenter {
+        /**
+         * 设置私信 id
+         * 通过私信 id 可以获取到所有的聊天记录
+         * 异步调用 [IChatDataSource.setChatId] 获取数据
+         * UI 线程调用 [IChatView.showHistoryChat] 显示数据
+         * @param chatId 聊天 id
+         */
+        fun setChatId(chatId:String)
+
         /**
          * 发送私聊
          * 异步调用 [IChatDataSource.sendChat] 获取数据
@@ -54,11 +63,11 @@ interface ChatContract {
      */
     interface IChatDataSource : BaseDataSource<List<IModel.IMsgModel>> {
         /**
-         * 设置用户 id
-         * @param myId 我的 id
-         * @param hisId 对方 id
+         * 设置私信 id
+         * @param chatId 私信 id
+         * @param callback 回调
          */
-        fun setUserId(myId: String, hisId: String)
+        fun setChatId(chatId: String, callback: BaseDataSource.LoadSourceCallback<List<IModel.IMsgModel>>)
 
         /**
          * 发送私聊
