@@ -25,7 +25,7 @@ class SheetCreatePresenter constructor(private val mISheetCreateView: SheetCreat
     override fun refreshPage() {}
 
     override fun createSheet(sheet: IModel.ISheetModel) {
-        if (NetworkHelper.isNetworkAvailable(mISheetCreateView.getViewContext())) {
+        if (!NetworkHelper.isNetworkAvailable(mISheetCreateView.getViewContext())) {
             mISheetCreateView.showCreateFailed()
             return
         }
