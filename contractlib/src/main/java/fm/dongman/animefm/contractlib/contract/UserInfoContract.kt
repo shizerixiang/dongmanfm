@@ -56,8 +56,8 @@ interface UserInfoContract {
         fun followUser(id: String, follow: Int)
 
         companion object {
-            val IS_FOLLOWED = 1 // 关注
-            val NOT_FOLLOWED = 0 // 取消关注
+            val IS_FOLLOWED = "follow" // 关注
+            val NOT_FOLLOWED = "unfollow" // 取消关注
         }
     }
 
