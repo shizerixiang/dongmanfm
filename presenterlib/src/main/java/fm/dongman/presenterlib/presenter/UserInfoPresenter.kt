@@ -74,8 +74,8 @@ class UserInfoPresenter constructor(private val mIUserInfoView: UserInfoContract
      */
     private fun follow(id: String, follow: Int) {
         doAsync {
-            mIUserInfoDataSource.followUser(follow, id, object : BaseDataSource.LoadSourceCallback<Void> {
-                override fun onDataLoaded(dataModel: Void) {
+            mIUserInfoDataSource.followUser(follow, id, object : BaseDataSource.LoadSourceCallback<String?> {
+                override fun onDataLoaded(dataModel: String?) {
                     uiThread {
                         if (mIUserInfoView.isActive())
                             mIUserInfoView.showFollowSucceed()

@@ -78,6 +78,6 @@ interface UserInfoContract {
          * @param followedId 被关注用户的 id
          * @param callback 关注回调
          */
-        fun followUser(follow: Int, followedId: String, callback: BaseDataSource.LoadSourceCallback<Void>)
+        fun followUser(follow: Int, followedId: String, callback: BaseDataSource.LoadSourceCallback<String?>)
     }
 }
