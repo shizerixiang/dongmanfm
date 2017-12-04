@@ -1,4 +1,10 @@
 # 更新说明
+## v1.2.2：部分参数类型问题
+### 改动说明：部分参数类型问题
+
+#### CommentEditContract
+
+#### CommentEditPresenter
 
 ## v1.1.10：部分逻辑问题
 ### 改动说明：部分逻辑问题

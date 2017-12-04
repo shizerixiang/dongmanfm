@@ -43,12 +43,12 @@ interface CommentEditContract {
     /**
      * 编辑评论数据源接口
      */
-    interface ICommentEditDataSource:BaseDataSource<Void>{
+    interface ICommentEditDataSource:BaseDataSource<String?>{
         /**
          * 提交评论
          * @param comment 评论
          * @param callback 提交评论回调
          */
-        fun submitComment(comment: IModel.ICommentModel, callback: BaseDataSource.LoadSourceCallback<Void>)
+        fun submitComment(comment: IModel.ICommentModel, callback: BaseDataSource.LoadSourceCallback<String?>)
     }
 }

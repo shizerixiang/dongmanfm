@@ -36,8 +36,8 @@ class CommentEditPresenter constructor(private val mICommentEditView: CommentEdi
      */
     private fun submit(comment: IModel.ICommentModel) {
         doAsync {
-            mICommentEditDataSource.submitComment(comment, object : BaseDataSource.LoadSourceCallback<Void> {
-                override fun onDataLoaded(dataModel: Void) {
+            mICommentEditDataSource.submitComment(comment, object : BaseDataSource.LoadSourceCallback<String?> {
+                override fun onDataLoaded(dataModel: String?) {
                     uiThread {
                         if (mICommentEditView.isActive())
                             mICommentEditView.showSubmitSucceed()
