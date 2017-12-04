@@ -123,8 +123,8 @@ class ComicInfoPresenter constructor(private val mComicInfoView: ComicInfoContra
      */
     private fun follow(comicId: String) {
         doAsync {
-            mIComicInfoDataSource.followComic(MyContract.USER_ID!!, comicId, object : BaseDataSource.LoadSourceCallback<Void> {
-                override fun onDataLoaded(dataModel: Void) {
+            mIComicInfoDataSource.followComic(MyContract.USER_ID!!, comicId, object : BaseDataSource.LoadSourceCallback<String?> {
+                override fun onDataLoaded(dataModel: String?) {
                     uiThread {
                         if (mComicInfoView.isActive())
                             mComicInfoView.showFollowSucceed()
@@ -194,8 +194,8 @@ class ComicInfoPresenter constructor(private val mComicInfoView: ComicInfoContra
     private fun join(sheetId: String) {
         mIComicInfoDataSource.setComicId(mId)
         doAsync {
-            mIComicInfoDataSource.joinSheet(sheetId, object : BaseDataSource.LoadSourceCallback<Void> {
-                override fun onDataLoaded(dataModel: Void) {
+            mIComicInfoDataSource.joinSheet(sheetId, object : BaseDataSource.LoadSourceCallback<String?> {
+                override fun onDataLoaded(dataModel: String?) {
                     uiThread {
                         if (mComicInfoView.isActive())
                             mComicInfoView.showJoinSheetSucceed()

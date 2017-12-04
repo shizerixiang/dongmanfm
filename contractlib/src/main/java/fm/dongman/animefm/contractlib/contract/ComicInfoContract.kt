@@ -191,7 +191,7 @@ interface ComicInfoContract {
          * @param comicId 动漫 id
          * @param callback 获取信息回调接口
          */
-        fun followComic(userId: String, comicId: String, callback: BaseDataSource.LoadSourceCallback<Void>)
+        fun followComic(userId: String, comicId: String, callback: BaseDataSource.LoadSourceCallback<String?>)
 
         /**
          * 动漫评分
@@ -212,7 +212,7 @@ interface ComicInfoContract {
          * @param sheetId 漫单 id
          * @param callback 获取信息回调接口
          */
-        fun joinSheet(sheetId: String, callback: BaseDataSource.LoadSourceCallback<Void>)
+        fun joinSheet(sheetId: String, callback: BaseDataSource.LoadSourceCallback<String?>)
 
         /**
          * 发送反馈
